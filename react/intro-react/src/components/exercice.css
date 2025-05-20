@@ -1,0 +1,8 @@
+.formular{
+    display: flex; flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+.textPlace{
+    display: column;
+}

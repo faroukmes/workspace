@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Navbar Styles */
+header {
+    padding: 15px 0;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-link {
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 13px;
+    transition: color 1s;
+}
+
+.nav-link:hover{
+    color: rgb(142, 112, 182);
+}
+
+#get-started {
+    background-color: rgb(142, 112, 182);
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+}
+
+/* Hero Section Styles */
+#hero-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#hero-subtitle {
+    color: rgb(142, 112, 182);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 11px;
+}
+
+#hero-title {
+    font-size: 40px;
+}
+
+#hero-left {
+    width: 100%;
+}
+
+#hero-img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+#hero-description {
+    color: gray;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+#hero-cta {
+    background-color: rgb(142, 112, 182);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 20px;
+    text-decoration: none;
+}
+
+/* Grid Styles */
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 100px auto;
+}
+
+.square {
+    height: 150px;
+    background-color: indigo;
+}
+
+#first {
+    grid-column: 1/3;
+}
