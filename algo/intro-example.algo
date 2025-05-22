@@ -1,0 +1,24 @@
+ALGORITHM even_or_odd
+VAR
+   n:INTEGER;
+BEGIN
+    read("please enter n")
+    IF (n % 2 = 0) THEN
+        write("the number is even")
+    ELSE
+        write("the number is odd")
+    END_IF    
+END
+
+
+ALGORITHM devisible_by_4
+VAR
+    number:INTEGER;
+BEGIN
+    read("please enter the number")
+    IF (number % 4 = 0) THEN
+        write("the number is devisible by 4")
+    ELSE
+        write("the number isn't devisible by 4")
+    END_IF
+END

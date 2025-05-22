@@ -1,0 +1,20 @@
+ALGORITHM sentence_length_counter
+
+VAR
+    sentence: STRING;
+    length: INTEGER;
+    i: INTEGER;
+
+BEGIN
+    sentence := read("Enter a sentence ending with a point: ");
+    length := 0;
+    
+    FOR i FROM 0 TO LENGTH(sentence)-1 STEP 1 DO
+        length := length + 1;
+        IF (sentence[i] = '.') THEN
+            BREAK;
+        END_IF
+    END_FOR
+    
+    write("The length of the sentence is: " + length);
+END

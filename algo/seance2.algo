@@ -1,0 +1,147 @@
+//exo 1:
+ALGORITHM search_array
+VAR
+    students : ARRAY_OF_INTEGER[20];
+
+BEGIN
+    //read 20 students age
+    FOR i FROM 0 TO 19 STEP 1  DO
+        students[i] := read("please read the student's age");
+    END_FOR
+    //find the studert with the age 25
+    FOR i FROM 0 TO 19 STEP 1  DO
+        IF (students[i] = 25) THEN
+         write("this is the student of 25yo")
+            
+        END_IF
+    END_FOR
+END
+//exo 2:
+ALGORITHM count_even_numbers
+VAR
+    tab: ARRAY_OF_INTEGER[100];
+    N:INTEGER;
+    X:INTEGER;
+    i:INTEGER;
+BEGIN
+    N := read("please enter how many values are going to enter");
+    FOR i FROM 0 TO N-1 DO
+        tab[i]:= read("please enter value {i+1}");
+    END_FOR
+        X:= 0;
+    FOR i FROM 0 TO N-1 STEP 1 DO
+        
+        IF (tab[i] % 2 = 0) THEN
+            X:=X+1;
+        END_IF
+    END_FOR
+    write("there is: {X} even number");
+END
+//exo 3:
+ALGORITHM array_reverse
+VAR
+    tab: ARRAY_OF_INTEGER[100];
+    N:INTEGER;
+    newtab: ARRAY_OF_INTEGER[100];
+BEGIN
+    N := read("please enter how many values are going to enter");
+
+    FOR i FROM 0 TO N-1 DO
+        tab[i]:= read("please enter value {i+1}");
+    END_FOR
+
+    FOR i FROM 1 TO N-1  DO
+        newtab[i]:= tab[N-i-1]
+    END_FOR
+END
+//exo 4:
+ALGORITHM give_index
+VAR
+    tab: ARRAY_OF_INTEGER[100];
+    N:INTEGER;
+    element:INTEGER;
+    index:INTEGER;
+    i:INTEGER
+BEGIN
+    N := read("please enter how many values are going to enter");
+    
+    FOR i FROM 0 TO N-1 DO
+        tab[i]:= read("please enter value {i+1}");
+    END_FOR
+
+    element := read("please enter the element you are searching for");
+    
+    FOR element FROM 1 TO 100  DO
+        IF (tab[i]= element) THEN
+            index := i;
+        END_IF
+        write("index of the element is:");        
+    END_FOR
+END 
+//exo 6:
+ALGORITHM give_index
+VAR
+    tab: ARRAY_OF_INTEGER[100];
+    N:INTEGER;
+    element:INTEGER;
+    Occurences:INTEGER;
+    i:INTEGER
+BEGIN
+    N := read("please enter how many values are going to enter");
+    
+    FOR i FROM 0 TO N-1 DO
+        tab[i]:= read("please enter value {i+1}");
+    END_FOR
+
+    element := read("please enter the element you are searching for");
+    occurences = 0;
+    FOR element FROM 1 TO 100  DO
+        IF (tab[i]= element) THEN
+            occurences := occurences + 1;
+        END_IF
+    END_FOR
+    write("we have found : {occurences} times");
+END
+//exo 7:
+ALGORITHM replacing_negative_number_by_0
+VAR
+    tab: ARRAY_OF_INTEGER[100];
+    N:INTEGER;
+    i:INTEGER;
+BEGIN
+    N := read("please enter how many values are going to enter");
+    
+    FOR i FROM 0 TO N-1 DO
+        tab[i]:= read("please enter value {i+1}");
+    END_FOR
+    FOR i FROM 1 TO 100  DO
+        IF (tab[i] < 0) THEN
+        tab[i] := 0;
+        END_IF
+    END_FOR
+END
+//exo 8:
+ALGORITHM pick_the_smallest_number
+VAR
+    tab: ARRAY_OF_INTEGER[100];
+    N:INTEGER;
+    i:INTEGER;
+    min:INTEGER;
+BEGIN
+    N := read("please enter how many values are going to enter");
+    
+    FOR i FROM 0 TO N-1 DO
+        tab[i]:= read("please enter value {i+1}");
+    END_FOR
+    min := 0;
+    FOR i FROM 0 TO N - 1 DO
+        IF (tab[i] > 0 AND (tab[i] < min OR min = 0)) THEN
+            min := tab[i];
+        END_IF   
+    END_FOR
+    IF (min > 0) THEN
+         write("we have found the smallest positive {min}");
+    ELSE 
+        write("we haven't found the smallest positive");
+    END_IF
+END
