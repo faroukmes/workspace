@@ -1,5 +1,5 @@
 import React from "react";
-import useTheme from "./useTheme";
+import useTheme from "../hooks/useTheme";
 
 export default function ButtonThemeSwitch() {
     const { toggleTheme } = useTheme();

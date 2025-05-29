@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import useTheme from "./useTheme";
+import useTheme from "../hooks/useTheme";
 
 export default function Themeswitch() {
     const { isLight, setIsLight } = useTheme(true);
