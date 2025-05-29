@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
+import useUser from "../hooks/useUser";
 
 export default function LoginForm() {
+    const { login } = useUser();
+    const [userForm, setUserForm] = useState({
+        email: "",
+        password: "",
+    });
     return (
-        <form className="acrd w-96 bg-base-200 shadow-sm mx-auto my-10 rounded-2xl">
+        <form
+            className="acrd w-96 bg-base-200 shadow-sm mx-auto my-10 rounded-2xl"
+            onSubmit={(e) => {
+                e.preventDefault();
+                login(userForm);
+            }}
+        >
             <div className="card-body gap-4">
                 <h2 className="text-5xl font-bold text-center">Sign in</h2>
                 <label className="input validator w-full">
@@ -28,7 +40,15 @@ export default function LoginForm() {
                             <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
                         </g>
                     </svg>
-                    <input type="email" placeholder="mail@site.com" required />
+                    <input
+                        type="email"
+                        placeholder="mail@site.com"
+                        required
+                        value={userForm.email}
+                        onChange={(e) => {
+                            setUserForm({ ...userForm, email: e.target.value });
+                        }}
+                    />
                 </label>
                 <div className="validator-hint hidden">
                     Enter valid email address
@@ -62,6 +82,13 @@ export default function LoginForm() {
                         minLength="8"
                         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                         title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
+                        value={userForm.password}
+                        onChange={(e) => {
+                            setUserForm({
+                                ...userForm,
+                                password: e.target.value,
+                            });
+                        }}
                     />
                 </label>
                 <p className="validator-hint hidden">

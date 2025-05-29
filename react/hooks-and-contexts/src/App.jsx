@@ -1,18 +1,22 @@
-import ButtonThemeSwitch from "./components/ButtonThemeSwitch";
 import LoginForm from "./components/LoginForm";
 import Navbar from "./components/navbar";
-import useTheme from "./hooks/useTheme";
+import Home from "./pages/Home";
+import SignIn from "./pages/SignIn";
 import ThemeProvider from "./provider/ThemeProvider";
-
+import UserProvider from "./provider/UserProvider";
+import { BrowserRouter, Route, Routes } from "react-router";
 function App() {
     return (
-        <ThemeProvider>
-            <UserProvider>
-                <Navbar />
-                {/* <ButtonThemeSwitch /> */}
-                <LoginForm />
-            </UserProvider>
-        </ThemeProvider>
+        <BrowserRouter>
+            <ThemeProvider>
+                <UserProvider>
+                    <Routes>
+                        <Route path="/" Component={Home} />
+                        <Route path="/sign-in" Component={SignIn} />
+                    </Routes>
+                </UserProvider>
+            </ThemeProvider>
+        </BrowserRouter>
     );
 }
 

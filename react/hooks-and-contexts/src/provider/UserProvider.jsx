@@ -10,7 +10,7 @@ export default function UserProvider({ children }) {
         if (information !== null) {
             setUser({
                 info: information,
-                IsLoggeddIn: true,
+                isLoggedIn: true,
             });
         }
     }
