@@ -1,0 +1,4 @@
+.like-btn.liked {
+    color: red;
+    /* or any other style to indicate the liked state */
+}
