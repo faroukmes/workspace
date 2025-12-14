@@ -20,7 +20,6 @@ class Car implements Vehicle {
         this.year = year;
     }
 
-    // Implement the start method
     start(): void {
         console.log("Car engine started");
     }
