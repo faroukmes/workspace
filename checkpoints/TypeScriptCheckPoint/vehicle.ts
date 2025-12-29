@@ -25,6 +25,6 @@ class Car implements Vehicle {
     }
 }
 
-const myCar = new Car("Toyota", "Camry", 2023);
+const myCar = new Car("Toyota", "Camry", 2025);
 
 myCar.start();
