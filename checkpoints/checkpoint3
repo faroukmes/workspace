@@ -1,0 +1,47 @@
+# Checkpoint: Hosting a MERN App on Microsoft Azure
+
+## Objective
+
+Deploy a MERN stack app on Azure with MongoDB Atlas.
+
+---
+
+## Steps
+
+1️⃣ **Prepare MERN App**
+
+-   Ensure backend (Node.js/Express) connected to MongoDB.
+-   Build React frontend: `npm run build`.
+
+2️⃣ **Create Azure Account**
+
+-   Sign up at Azure Portal.
+-   Navigate to dashboard.
+
+3️⃣ **Set Up MongoDB Atlas**
+
+-   Create MongoDB cluster.
+-   Note connection URI for `.env`.
+
+4️⃣ **Prepare App for Deployment**
+
+-   Use `.env` for DB credentials and sensitive data.
+-   Place React build folder inside backend (e.g., `server/public`).
+
+5️⃣ **Create Azure Web App**
+
+-   Azure Portal > Create Resource > Web > Web App.
+-   Fill app name, resource group, region, pricing tier.
+
+6️⃣ **Set Deployment Source**
+
+-   Deployment Center > Local Git or GitHub.
+-   Clone repo if Local Git.
+
+7️⃣ **Deploy MERN App**
+
+```bash
+git add .
+git commit -m "Deploy MERN app"
+git push azure master
+```
