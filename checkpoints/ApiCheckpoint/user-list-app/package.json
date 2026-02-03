@@ -1,5 +1,80 @@
-{
-  "name": "user-list-app",
-  "version": "0.1.0",
-  "private": true
+#helo-world.js
+console.log("HELLO WORLD");
+
+#server.js:
+
+const http = require("http");
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, {"Content-Type": "text/html"});
+  res.end("<h1>Hello Node!!!!</h1>\n");
+});
+
+server.listen(3000, () => {
+  console.log("Server running at http://localhost:3000");
+});
+
+#file-system.js:
+const fs = require("fs");
+
+// Create welcome.txt
+fs.writeFile("welcome.txt", "Hello Node", (err) => {
+  if (err) throw err;
+  console.log("welcome.txt created!");
+});
+
+// Read hello.txt
+fs.readFile("hello.txt", "utf8", (err, data) => {
+  if (err) {
+    console.log("Error reading hello.txt:", err.message);
+  } else {
+    console.log("Data from hello.txt:", data);
+  }
+});
+
+#hello-text.js:
+this is hello.txt in sample content
+
+#password-generator.js:
+const generator = require("generate-password");
+
+function generatePassword() {
+  const password = generator.generate({
+    length: 10,
+    numbers: true,
+    symbols: true,
+    uppercase: true
+  });
+  console.log("Generated Password:", password);
 }
+
+generatePassword();
+
+#to installthe password generator we use this command:
+npm install generate-password
+
+#email-sender.js:
+const nodemailer = require("nodemailer");
+
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: "your-email@gmail.com",     // Replace with your Gmail
+    pass: "your-email-password"       // Or App Password
+  }
+});
+
+const mailOptions = {
+  from: "your-email@gmail.com",
+  to: "your-email@gmail.com",
+  subject: "Test Email from Node.js",
+  text: "Hello! This is a test email sent from Node.js"
+};
+
+transporter.sendMail(mailOptions, (error, info) => {
+  if (error) {
+    console.log("Error:", error);
+  } else {
+    console.log("Email sent:", info.response);
+  }
+});
